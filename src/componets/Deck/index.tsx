@@ -11,7 +11,7 @@ import cardValues, { Card } from "./cardValues";
 
 type Direction = "left" | "right" | "up" | "down";
 
-export default () => {
+const Deck: React.FC = () => {
   const cards = cardValues;
   const [currentIndex, setCurrentIndex] = useState(cards.length - 1);
 
@@ -32,6 +32,7 @@ export default () => {
 
   const swipe = async (dir: Direction) => {
     if (currentIndex < cards.length) {
+      // @ts-ignore
       await childRefs[currentIndex]?.current?.swipe(dir);
       setCurrentIndex(currentIndex - 1);
     }
@@ -66,7 +67,7 @@ export default () => {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className={` animated   mt-32 pr-4 text-white animate__infinite animate__headShake sm:hidden sm:h-6 sm:w-6 md:h-12 md:w-12 ${hiddenHelperArrows}`}
+            className={` animated   mt-32 pr-4 text-white animate__infinite animate__headShake  max-md:hidden  md:h-12 md:w-12 ${hiddenHelperArrows}`}
           >
             <path
               strokeLinecap="round"
@@ -78,6 +79,7 @@ export default () => {
         <div className="cardContainer flex justify-center">
           {cards.map((character, index) => (
             <TinderCard
+              // @ts-ignore
               ref={childRefs[index]}
               className="swipe "
               key={character.name}
@@ -127,7 +129,7 @@ export default () => {
           viewBox="0 0 24 24"
           strokeWidth={1.5}
           stroke="currentColor"
-          className={` animated   mt-32 pl-4 text-white text-white animate__infinite animate__headShake sm:hidden sm:h-6 sm:w-6    md:h-12 md:w-12 ${hiddenHelperArrows}`}
+          className={` animated  mt-32 pl-4 text-white animate__infinite animate__headShake max-md:hidden md:h-12 md:w-12 ${hiddenHelperArrows}`}
         >
           <path
             strokeLinecap="round"
@@ -179,3 +181,6 @@ export default () => {
     </div>
   );
 };
+Deck.displayName = "Deck";
+
+export default Deck;
