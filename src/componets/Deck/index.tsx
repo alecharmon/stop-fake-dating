@@ -40,6 +40,8 @@ const Deck: React.FC = () => {
 
   const outOfFrame = (card: Card, direction: Direction) => {
     console.log(card.name + " left the screen! ", direction);
+    document.getElementById(card.name)?.remove();
+
     setLastSetment(direction === "left");
     setShowModal(true);
     setCurrent(card);
@@ -78,49 +80,53 @@ const Deck: React.FC = () => {
         </div>
         <div className="cardContainer flex justify-center">
           {cards.map((character, index) => (
-            <TinderCard
-              // @ts-ignore
-              ref={childRefs[index]}
-              className="swipe "
-              key={character.name}
-              onSwipe={(dir) => swiped(dir, character.name)}
-              swipeRequirementType="position"
-              onCardLeftScreen={(direction) => outOfFrame(character, direction)}
-            >
-              <div
-                style={{ backgroundImage: "url(" + character.url + ")" }}
-                className="card"
+            <div id={character.name}>
+              <TinderCard
+                // @ts-ignore
+                ref={childRefs[index]}
+                className="swipe"
+                key={character.name}
+                onSwipe={(dir) => swiped(dir, character.name)}
+                swipeRequirementType="position"
+                onCardLeftScreen={(direction) =>
+                  outOfFrame(character, direction)
+                }
               >
-                <div className=" absolute	bottom-0 grid grid-cols-1 justify-between rounded-b-lg bg-zinc-50 p-2  ">
-                  <h3 className="text-lg text-zinc-800">{character.name}</h3>
-                  <p className=" mb-1 pl-1 text-sm  text-zinc-600">
-                    {character.bio}
-                  </p>
-                  <div className="flex">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={1.5}
-                      stroke="currentColor"
-                      className="mb-1 h-6 w-6 text-zinc-600"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"
-                      />
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
-                      />
-                    </svg>
-                    <h4 className="  text-zinc-600">NYC</h4>
+                <div
+                  style={{ backgroundImage: "url(" + character.url + ")" }}
+                  className="card"
+                >
+                  <div className=" absolute	bottom-0 grid grid-cols-1 justify-between rounded-b-lg bg-zinc-50 p-2  ">
+                    <h3 className="text-lg text-zinc-800">{character.name}</h3>
+                    <p className=" mb-1 pl-1 text-sm  text-zinc-600">
+                      {character.bio}
+                    </p>
+                    <div className="flex">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth={1.5}
+                        stroke="currentColor"
+                        className="mb-1 h-6 w-6 text-zinc-600"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"
+                        />
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
+                        />
+                      </svg>
+                      <h4 className="  text-zinc-600">NYC</h4>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </TinderCard>
+              </TinderCard>
+            </div>
           ))}
         </div>
         <svg

@@ -1,6 +1,5 @@
 import React from "react";
 import { Card } from "../Deck/cardValues";
-import emoji from "react-easy-emoji";
 
 interface Props {
   showModal: boolean;
@@ -25,20 +24,15 @@ export default function Modal(props: Props) {
               {/*content*/}
               <div className="relative flex w-full flex-col rounded-lg border-0 bg-white shadow-lg outline-none focus:outline-none">
                 {/*header*/}
-                <div className="flex items-start justify-between rounded-t border-b border-solid border-slate-200 p-5">
-                  <h3 className="text-3xl font-semibold">
-                    {props.setmeniment
-                      ? emoji(`😎`)
-                      : emoji(`😬 Think twice about: ${props.value.name}`)}
-                  </h3>
-                  <button
-                    className="float-right ml-auto border-0 bg-transparent p-1 text-3xl font-semibold leading-none text-black opacity-5 outline-none focus:outline-none"
-                    onClick={() => hideHandler()}
-                  >
-                    <span className="block h-6 w-6 bg-transparent text-2xl text-black opacity-5 outline-none focus:outline-none">
-                      ×
-                    </span>
-                  </button>
+                <div className="flex items-start justify-center rounded-t border-b border-solid border-slate-200 p-5">
+                  {props.setmeniment ? (
+                    <img className="w-20" src="./img/sunglasses.svg" />
+                  ) : (
+                    <>
+                      <img className="w-20" src="./img/red-flag.svg" />
+                      <img className="w-20" src="./img/grimmace.svg" />
+                    </>
+                  )}
                 </div>
                 {/*body*/}
                 <div className="relative flex-auto p-6">

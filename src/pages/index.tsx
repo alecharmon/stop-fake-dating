@@ -28,7 +28,7 @@ const Home: NextPage = () => {
                   href="https://www.stopspying.org/"
                   target="_blank"
                   rel="noreferrer"
-                  className="hover:underline"
+                  className="underline hover:underline"
                 >
                   Surveillance Technology Oversight Project, Inc.
                 </a>{" "}
