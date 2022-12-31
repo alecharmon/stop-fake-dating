@@ -80,7 +80,7 @@ const Deck: React.FC = () => {
         </div>
         <div className="cardContainer flex justify-center">
           {cards.map((character, index) => (
-            <div id={character.name}>
+            <div key={character.name} id={character.name}>
               <TinderCard
                 // @ts-ignore
                 ref={childRefs[index]}
