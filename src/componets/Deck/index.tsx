@@ -44,7 +44,7 @@ const Deck: React.FC = () => {
   const hiddenHelperArrows =
     currentIndex === cards.length - 1 ? "md:block" : "hidden";
 
-  if (currentIndex < 0) {
+  if (currentIndex < 0 && showModal != true) {
     return <CTA />;
   }
 
