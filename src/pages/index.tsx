@@ -17,7 +17,7 @@ const Home: NextPage = () => {
       <main className="flex min-h-screen flex-col items-center justify-between bg-gradient-to-b from-[#e35e8d] to-[#4f444c]">
         <div className="container flex min-h-screen  flex-col items-center justify-between gap-12 px-4 py-4">
           <h1 className="pb-4 text-center text-5xl font-extrabold tracking-tight text-white sm:text-[5rem]">
-            Swipe Left on the NYPD
+            Surveillance Dating
           </h1>
           <DeckNoSSR />
           <footer>

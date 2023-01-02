@@ -1,5 +1,5 @@
 import React from "react";
-import { Card } from "../Deck/cardValues";
+import type { Card } from "../Deck/cardValues";
 
 interface Props {
   showModal: boolean;
@@ -21,16 +21,26 @@ export default function Modal(props: Props) {
         <>
           <div className="fixed inset-0 z-50 flex items-center justify-center overflow-y-auto overflow-x-hidden outline-none focus:outline-none">
             <div className="relative my-6 mx-auto w-auto max-w-3xl">
-              {/*content*/}
               <div className="relative flex w-full flex-col rounded-lg border-0 bg-white shadow-lg outline-none focus:outline-none">
-                {/*header*/}
                 <div className="flex items-start justify-center rounded-t border-b border-solid border-slate-200 p-5">
                   {props.setmeniment ? (
-                    <img className="w-20" src="./img/sunglasses.svg" />
+                    <img
+                      className="w-20"
+                      alt="sunglasses-emoji"
+                      src="./img/sunglasses.svg"
+                    />
                   ) : (
                     <>
-                      <img className="w-20" src="./img/red-flag.svg" />
-                      <img className="w-20" src="./img/grimmace.svg" />
+                      <img
+                        className="w-20"
+                        alt="red-flag"
+                        src="./img/red-flag.svg"
+                      />
+                      <img
+                        className="w-20"
+                        alt="red-flag"
+                        src="./img/grimmace.svg"
+                      />
                     </>
                   )}
                 </div>
@@ -49,13 +59,6 @@ export default function Modal(props: Props) {
                   >
                     Close
                   </button>
-                  {/* <button
-                    className="mr-1 mb-1 rounded bg-emerald-500 px-6 py-3 text-sm font-bold uppercase text-white shadow outline-none transition-all duration-150 ease-linear hover:shadow-lg focus:outline-none active:bg-emerald-600"
-                    type="button"
-                    onClick={() => hideHandler()}
-                  >
-                    Learn more
-                  </button> */}
                 </div>
               </div>
             </div>

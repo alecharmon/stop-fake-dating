@@ -1,13 +1,8 @@
-import React, {
-  useState,
-  useMemo,
-  useRef,
-  useEffect,
-  ReactElement,
-} from "react";
+import React, { useState, useMemo } from "react";
 import TinderCard from "react-tinder-card";
 import Modal from "../Modal";
-import cardValues, { Card } from "./cardValues";
+import type { Card } from "./cardValues";
+import cardValues from "./cardValues";
 
 type Direction = "left" | "right" | "up" | "down";
 
@@ -22,16 +17,13 @@ const Deck: React.FC = () => {
     () =>
       Array(cards.length)
         .fill(0)
-        .map((i) => React.createRef()),
-    []
+        .map(() => React.createRef()),
+    [cards.length]
   );
-  const swiped = (direction: any, nameToDelete: any) => {
-    console.log(showModal);
-    console.log("removing: " + nameToDelete);
-  };
 
   const swipe = async (dir: Direction) => {
     if (currentIndex < cards.length) {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       await childRefs[currentIndex]?.current?.swipe(dir);
       setCurrentIndex(currentIndex - 1);
@@ -50,6 +42,10 @@ const Deck: React.FC = () => {
 
   const hiddenHelperArrows =
     currentIndex === cards.length - 1 ? "md:block" : "hidden";
+
+  if (currentIndex === 0) {
+    return <></>;
+  }
 
   return (
     <div>
@@ -79,27 +75,25 @@ const Deck: React.FC = () => {
           </svg>
         </div>
         <div className="cardContainer flex justify-center">
-          {cards.map((character, index) => (
-            <div key={character.name} id={character.name}>
+          {cards.map((card, index) => (
+            <div key={card.name} id={card.name}>
               <TinderCard
+                // eslint-disable-next-line @typescript-eslint/ban-ts-comment
                 // @ts-ignore
                 ref={childRefs[index]}
                 className="swipe"
-                key={character.name}
-                onSwipe={(dir) => swiped(dir, character.name)}
+                key={card.name}
                 swipeRequirementType="position"
-                onCardLeftScreen={(direction) =>
-                  outOfFrame(character, direction)
-                }
+                onCardLeftScreen={(direction) => outOfFrame(card, direction)}
               >
                 <div
-                  style={{ backgroundImage: "url(" + character.url + ")" }}
+                  style={{ backgroundImage: "url(" + card.url + ")" }}
                   className="card"
                 >
                   <div className=" absolute	bottom-0 grid grid-cols-1 justify-between rounded-b-lg bg-zinc-50 p-2  ">
-                    <h3 className="text-lg text-zinc-800">{character.name}</h3>
+                    <h3 className="text-lg text-zinc-800">{card.name}</h3>
                     <p className=" mb-1 pl-1 text-sm  text-zinc-600">
-                      {character.bio}
+                      {card.bio}
                     </p>
                     <div className="flex">
                       <svg
