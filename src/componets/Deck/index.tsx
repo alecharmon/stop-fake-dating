@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from "react";
 import TinderCard from "react-tinder-card";
+import CTA from "../CTA/CTA";
 import Modal from "../Modal";
 import type { Card } from "./cardValues";
 import cardValues from "./cardValues";
@@ -43,8 +44,8 @@ const Deck: React.FC = () => {
   const hiddenHelperArrows =
     currentIndex === cards.length - 1 ? "md:block" : "hidden";
 
-  if (currentIndex === 0) {
-    return <></>;
+  if (currentIndex < 0) {
+    return <CTA />;
   }
 
   return (
@@ -162,20 +163,26 @@ const Deck: React.FC = () => {
           onClick={() => swipe("right")}
           className="  rounded-full   bg-green-500 px-4 py-2 font-bold text-white hover:bg-green-700 "
         >
-          <svg
+          <img
+            src="./img/security-camera.svg"
+            alt="camera"
+            className="m-0 flex h-12 w-12 justify-center invert"
+          />
+          {/* <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="m-0 flex h-12 w-12 justify-center	"
+            className="m-0 flex h-12 w-12 justify-center"
+            
           >
             <path
               strokeLinecap="round"
               strokeLinejoin="round"
               d="M4.5 12.75l6 6 9-13.5"
             />
-          </svg>
+          </svg> */}
         </button>
       </div>
     </div>

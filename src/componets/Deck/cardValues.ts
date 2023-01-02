@@ -15,8 +15,8 @@ const cardValues: FixedSizeArray<3, Card> = [
   {
     name: "Drones",
     url: "./img/drones.jpg",
-    body: "here are all the ways that drones are bad",
-    bio: "The ability to have video surveillance of anywhere in the city? Creepy. What if this popped up in your window? And as we know, the NYPD can get hand-me-downs from the military… and there are militarized drones out there… "
+    body: "he ability to have video surveillance of anywhere in the city? Creepy. What if this popped up in your window? And as we know, the NYPD can get hand-me-downs from the military… and there are militarized drones out there… ",
+    bio: "Searching for The One. Happy to see other people in the meantime… And I promise, I’ll always come to you."
   },
   {
     name: "Fake Profiles",
