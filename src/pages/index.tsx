@@ -1,6 +1,7 @@
 import { type NextPage } from "next";
 import dynamic from "next/dynamic";
 import Head from "next/head";
+import { Analytics } from "@vercel/analytics/react";
 
 const DeckNoSSR = dynamic(() => import("../componets/Deck"), {
   ssr: false,
@@ -9,6 +10,7 @@ const DeckNoSSR = dynamic(() => import("../componets/Deck"), {
 const Home: NextPage = () => {
   return (
     <>
+      <Analytics />
       <Head>
         <title>Swipe Left On the NYPD | S.T.O.P</title>
         <link rel="icon" href="/favicon.ico" />
