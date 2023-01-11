@@ -8,10 +8,14 @@ const CTA: React.FC = () => (
       enterFrom="opacity-0"
       enterTo="opacity-100"
     >
-      <div className="min-w-screen my-6 mx-auto max-w-3xl pb-2">
+      <div className="animated min-w-screen my-6 mx-auto max-w-3xl pb-2 animate__fadeInUp">
         <div className=" w-full flex-col rounded-lg border-0 bg-white shadow-lg outline-none ">
           <div className="flex items-start justify-center rounded-t border-b border-solid border-slate-200 p-5">
-            <img alt="stop-logo" src="./img/stop.png" />
+            <img
+              alt="stop-logo"
+              src="./img/stop.png"
+              className="max-w-full md:max-w-sm"
+            />
           </div>
           <div className="flex-auto p-6">
             <p className="my-4 text-lg leading-relaxed text-slate-500">

@@ -6,7 +6,7 @@ module.exports = {
     
     animatedSettings: {
       animatedSpeed: 1000,
-      classes: ['infinite', 'headShake'], 
+      classes: ['infinite', 'headShake', 'bounceIn', 'fadeInUp'], 
     }
   },
   plugins: [

@@ -24,7 +24,7 @@ export default function Modal(props: Props) {
         enterFrom="opacity-0"
         enterTo="opacity-100"
       >
-        <div className="fixed inset-0 z-50 flex items-center justify-center overflow-y-auto overflow-x-hidden outline-none focus:outline-none">
+        <div className="animated fixed inset-0 z-50 flex items-center justify-center overflow-y-auto overflow-x-hidden outline-none animate__bounceIn focus:outline-none">
           <div className="relative my-6 mx-auto w-auto max-w-3xl">
             <div className="relative flex w-full flex-col rounded-lg border-0 bg-white shadow-lg outline-none focus:outline-none">
               <div className="flex items-start justify-center rounded-t border-b border-solid border-slate-200 p-5">
