@@ -1,6 +1,7 @@
 import React from "react";
 import type { Card } from "../Deck/cardValues";
 import { Transition } from "@headlessui/react";
+import { eventLink } from "../../constants";
 
 interface Props {
   showModal: boolean;
@@ -50,8 +51,21 @@ export default function Modal(props: Props) {
                 )}
               </div>
               <div className="relative flex-auto p-6">
-                <p className="my-4 text-lg leading-relaxed text-slate-500">
+                <p className="my-4 text-lg  leading-relaxed text-slate-500">
                   {props.value.body}
+                </p>
+
+                <p className="my-4 text-lg italic leading-relaxed text-slate-500">
+                  {props.value.cta}{" "}
+                  <a
+                    href={eventLink}
+                    target="_blank"
+                    className="underline hover:underline"
+                    rel="noreferrer"
+                  >
+                    {" "}
+                    Join us and learn more here.
+                  </a>
                 </p>
               </div>
               <div className="flex items-center justify-end rounded-b border-t border-solid border-slate-200 p-6">

@@ -91,7 +91,7 @@ const Deck: React.FC = () => {
                   style={{ backgroundImage: "url(" + card.url + ")" }}
                   className="card"
                 >
-                  <div className=" absolute	bottom-0 grid grid-cols-1 justify-between rounded-b-lg bg-zinc-50 p-2  ">
+                  <div className="absolute bottom-0	grid w-full grid-cols-1 justify-between rounded-b-lg bg-zinc-50 p-2  ">
                     <h3 className="text-lg text-zinc-800">{card.name}</h3>
                     <p className=" mb-1 pl-1 text-sm  text-zinc-600">
                       {card.bio}

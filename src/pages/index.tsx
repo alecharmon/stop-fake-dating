@@ -12,13 +12,13 @@ const Home: NextPage = () => {
     <>
       <Analytics />
       <Head>
-        <title>Swipe Left On the NYPD | S.T.O.P</title>
+        <title>Swipe Left on Surveillance | S.T.O.P</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="flex min-h-screen flex-col items-center justify-between bg-gradient-to-b from-[#e35e8d] to-[#4f444c]">
         <div className="container flex min-h-screen  flex-col items-center justify-between px-4 py-4">
           <h1 className="pb-2 text-center text-5xl font-extrabold tracking-tight text-white sm:pb-4 md:text-[5rem]">
-            Surveillance Dating
+            Swipe Left <br className="md:hidden" /> on Surveillance
           </h1>
           <DeckNoSSR />
           <footer>
@@ -34,7 +34,16 @@ const Home: NextPage = () => {
                   Surveillance Technology Oversight Project, Inc.
                 </a>{" "}
                 (STOP). All rights reserved. S.T.O.P.® is a registered
-                trademark.
+                trademark.{" "}
+                <a
+                  href="https://www.stopspying.org/s/STOP_-_GDPR_Privacy_Notice.pdf"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="underline hover:underline"
+                >
+                  Read our privacy policy here
+                </a>
+                .
               </span>
             </div>
           </footer>
