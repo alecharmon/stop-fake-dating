@@ -17,7 +17,7 @@ const cardValues: FixedSizeArray<3, Card> = [
   {
     name: "Drones",
     url: "./img/drones.jpg",
-    body: "The ability to have video surveillance of anywhere in the city? Creepy. What if this popped up in your window? And as we know, the NYPD can get hand-me-downs from the military… and there are militarized drones out there… ",
+    body: "Creepy police drones can surveil concerts, protests, or other events without a warrant – making it harder to ghost the NYPD than your ex.",
     bio: "Searching for The One. Happy to see other people in the meantime… And I promise, I’ll always come to you.",
     cta: "S.T.O.P. is fighting to ban police drones that chill our First Amendment rights – and kill the vibe.",
   },

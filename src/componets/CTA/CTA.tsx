@@ -50,7 +50,15 @@ const CTA: React.FC = () => (
               <br />
               Date: Tuesday, Feb 7 at 6PM
               <br />
-              Location: TBD
+              Location:{" "}
+              <a
+                href="https://goo.gl/maps/KxccdjcCSPyg9ndo6"
+                target="_blank"
+                rel="noreferrer"
+                className="underline"
+              >
+                Stitch Blues Bar, 247 W 37 St.
+              </a>
             </p>
           </div>
           <div className="flex items-center justify-end rounded-b p-6">
