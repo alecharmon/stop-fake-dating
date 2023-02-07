@@ -14,6 +14,7 @@ const Home: NextPage = () => {
       <Head>
         <title>Swipe Left on Surveillance | S.T.O.P</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta name="theme-color" content="#e35e8d" />
       </Head>
       <main className="flex min-h-screen flex-col items-center justify-between bg-gradient-to-b from-[#e35e8d] to-[#4f444c]">
         <div className="container flex min-h-screen  flex-col items-center justify-between px-4 py-4">
