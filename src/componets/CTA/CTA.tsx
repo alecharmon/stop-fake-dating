@@ -1,5 +1,5 @@
 import { Transition } from "@headlessui/react";
-import { eventLink } from "../../constants";
+import { stopLink } from "../../constants";
 
 const CTA: React.FC = () => (
   <>
@@ -24,50 +24,34 @@ const CTA: React.FC = () => (
             </b>
             <p className="mt-0 text-lg leading-relaxed text-slate-500">
               <br />
-              <br />
-              This month, S.T.O.P. launched{" "}
+              In January, we launched{" "}
               <b>
-                “Banning Big Brother: New York’s Surveillance Sanctuary State
-                Blueprint,” our anti-surveillance legislative campaign for New
-                York State.
+                <i>
+                  “Banning Big Brother: New York’s Surveillance Sanctuary State
+                  Blueprint,”
+                </i>
               </b>{" "}
-              The dangerous, undemocratic technologies to outlaw include fake
-              police social media accounts, OMNY surveillance, warrantless drone
+              our anti-surveillance legislative campaign for New York State. The
+              dangerous, undemocratic technologies to outlaw include fake police
+              social media accounts, OMNY surveillance, warrantless drone
               surveillance, mass geolocation tracking, faulty facial recognition
               software, using DNA pseudoscience to make police sketches, and
               more.
               <br />
               <br />
-              <b>
-                Join us for a Valentine’s Day of Action and tell NYS legislators
-                to SWIPE LEFT on sketchy surveillance!
-              </b>{" "}
-              We’ll be signing anti-Valentine “breakup letters” for our
-              representatives while we sip cocktails, share more about
-              S.T.O.P.’s work, and maybe even swap stories about bad dates. See
-              you there!
-              <br />
-              <br />
-              Date: Tuesday, Feb 7 at 6PM
-              <br />
-              Location:{" "}
-              <a
-                href="https://goo.gl/maps/KxccdjcCSPyg9ndo6"
-                target="_blank"
-                rel="noreferrer"
-                className="underline"
-              >
-                Stitch Blues Bar, 247 W 37 St.
-              </a>
+              Join us for a Valentine’s Day of Action and tell NYS legislators
+              to <b>BREAK UP</b> with sketchy surveillance! Sign anti-Valentine
+              “breakup letters” for your New York State representatives by
+              following the button below!
             </p>
           </div>
           <div className="flex items-center justify-end rounded-b p-6">
-            <a href={eventLink} target="_blank" rel="noreferrer">
+            <a href={stopLink} target="_blank" rel="noreferrer">
               <button
                 className="background-transparent text-md mr-1 mb-1 rounded bg-green-500 px-8 py-4 font-bold  uppercase  text-white transition-all hover:bg-green-700 "
                 type="button"
               >
-                RSVP
+                Take Action
               </button>
             </a>
           </div>

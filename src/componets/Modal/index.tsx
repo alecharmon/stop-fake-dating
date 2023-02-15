@@ -1,7 +1,7 @@
 import React from "react";
 import type { Card } from "../Deck/cardValues";
 import { Transition } from "@headlessui/react";
-import { eventLink } from "../../constants";
+import { stopLink } from "../../constants";
 
 interface Props {
   showModal: boolean;
@@ -58,7 +58,7 @@ export default function Modal(props: Props) {
                 <p className="my-4 text-lg italic leading-relaxed text-slate-500">
                   {props.value.cta}{" "}
                   <a
-                    href={eventLink}
+                    href={stopLink}
                     target="_blank"
                     className="underline hover:underline"
                     rel="noreferrer"

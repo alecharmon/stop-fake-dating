@@ -1,1 +1,1 @@
-export const eventLink = "https://stopspying.kindful.com/e/vday-of-action";
+export const stopLink = "https://www.stopspying.org/vdoa";
